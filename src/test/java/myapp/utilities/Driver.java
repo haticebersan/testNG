@@ -6,7 +6,43 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import java.time.Duration;
-public class Driver {
+import java.time.Duration;public class Driver {
     //    declaring driver instance
-}
+    private static WebDriver driver;
+    //    getDriver setup and instantiate the driver
+    public static WebDriver getDriver(){
+        if (driver==null){
+            switch (ConfigReader.getProperty("browser")) {
+                case "chrome" -> {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                }
+                case "firefox" -> {
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                }
+                case "chrome-headless" -> {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                }
+                case "edge" -> {
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                }
+                case "safari" -> {
+                    WebDriverManager.safaridriver().setup();
+                    driver = new SafariDriver();
+                }
+            }
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+            driver.manage().window().maximize();
+        }
+        return driver;
+    }
+    //    closeDriver is used to quit the browser
+    public static void closeDriver(){
+        if (driver!=null) {//if driver is pointing any object such as chrome or edge, then quit
+            driver.quit();
+            driver=null;
+        }
+    } }
