@@ -1,4 +1,4 @@
-package myapp.test.topics;
+package myapp.tests.topics;
 
 import myapp.utilities.Driver;
 import org.testng.annotations.Test;

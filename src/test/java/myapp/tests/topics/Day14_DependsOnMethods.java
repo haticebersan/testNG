@@ -1,4 +1,4 @@
-package myapp.test.topics;
+package myapp.tests.topics;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

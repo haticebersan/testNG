@@ -7,9 +7,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;public class Driver {
-    //    declaring driver instance
+    //declaring driver instance
     private static WebDriver driver;
-    //    getDriver setup and instantiate the driver
+    //getDriver setup and instantiate the driver
     public static WebDriver getDriver(){
         if (driver==null){
             switch (ConfigReader.getProperty("browser")) {

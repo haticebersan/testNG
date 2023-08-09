@@ -1,9 +1,6 @@
-package myapp.test.topics;
+package myapp.tests.topics;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
-import org.testng.annotations.Test;
-
-
 import org.testng.annotations.Test;
 
 public class Day14_ConfigPropertiesTest {
