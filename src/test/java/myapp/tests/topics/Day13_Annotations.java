@@ -11,13 +11,12 @@ public class Day13_Annotations {
     @Test(enabled = false) disables the test
     @BeforeSuite runs before all tests in this suite.
     @BeforeTest runs before any test method belonging to the classes
-    @BeforeGroups runs before grups
+    @BeforeGroups runs before groups
     @BeforeClass runs before the first test method in the current class
     @BeforeMethod runs before EACH test method.
-    @Test(priority = -1) means it will work before default priorities. Because default priority is 0. If you make the priority less it will work first.
-
+    @Test(priority = -1) means it will work before default priorities.
+    Because default priority is 0. If you make the priority less it will work first.
      */
-
 
     @BeforeMethod
     public void beforeMethod(){
@@ -59,7 +58,7 @@ public class Day13_Annotations {
     public void afterSuite(){
         System.out.println("After suite...");
     }
-    @Test(priority = 3)
+    @Test(priority = 3, groups = "minor-regression-1")
     public void test1(){
         System.out.println("Test1");
     }
@@ -75,7 +74,7 @@ public class Day13_Annotations {
     public void test4(){
         System.out.println("Test4");
     }
-    @Test
+    @Test(groups = "minor-regression-1")
     public void test5(){
         System.out.println("Test5");
     }

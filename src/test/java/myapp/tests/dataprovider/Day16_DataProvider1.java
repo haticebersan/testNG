@@ -16,7 +16,7 @@ public class Day16_DataProvider1 {
 
         return data;
     }
-    @Test(dataProvider = "customerData")
+    @Test(dataProvider = "customerData", groups = "minor-regression-1")
     public void test1(String username, String password) {
 
         System.out.println("Username: " + username + " -- Password: " + password);
@@ -37,7 +37,7 @@ public class Day16_DataProvider1 {
         return carList;
     }
 
-    @Test(dataProvider = "electricCars")
+    @Test(dataProvider = "electricCars", groups = "minor-regression-1")
     public void test2(String car) {
 
         System.out.println(car);
