@@ -57,10 +57,11 @@ public class ListenersUtil implements ITestListener, IRetryAnalyzer, IAnnotation
         return false;
     }
 
-    //    This makes the failed test cases automatically rerun using testng xml files
+    //This makes the failed test cases automatically rerun using testng xml files
     @Override
     public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
         annotation.setRetryAnalyzer(ListenersUtil.class);
     }
+
 
 }

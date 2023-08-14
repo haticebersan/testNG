@@ -19,6 +19,7 @@ public class ConfigReader {
             fileInputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
+            LoggerUtils.error("Check line 22 on ConfigReader class");
         }
     }
     //This method will get the key from properties file,
